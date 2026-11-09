@@ -12,78 +12,54 @@
   --border: #2a324b;
 }
 
+/* ==========================================
+   CARGA DE FUENTES LOCALES (@font-face)
+   ========================================== */
+
 /* 1. Alata (Cuerpo de texto y lectura general) */
 @font-face {
-    font-family: 'Alata';
-    src: url('../fonts/Alata-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Alata';
+  src: url('fonts/Alata-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* 2. Boogaloo (Titulares principales / Hero) */
+/* 2. Boogaloo (Titulares principales / Hero / Logotipos) */
 @font-face {
-    font-family: 'Boogaloo';
-    src: url('../fonts/Boogaloo-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-/* Lectura principal de la web */
-body {
-    font-family: 'Alata', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    background-color: #1b1b2f;
-    color: #e0e0e0;
+  font-family: 'Boogaloo';
+  src: url('fonts/Boogaloo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Título de la cabecera / Banner */
-h1, .hero-title {
-    font-family: 'Boogaloo', cursive, sans-serif;
-    font-size: 3.5rem;
-    color: #00f5d4; /* Cian neón */
-}
-
-/* Títulos de sección estilo Pixel Art */
-h2, h3, .pixel-header {
-    font-family: 'Upheaval', sans-serif;
-    font-size: 2.2rem;
-    letter-spacing: 1px;
-    color: #ff007f; /* Magenta neón */
-}
-
-/* Etiquetas, consolas de comandos o diálogos retro */
-.dialogo-box, .retro-hud {
-    font-family: 'VT323', monospace;
-    font-size: 1.8rem;
-    letter-spacing: 1.5px;
-}
-
-/* 3. VT323 (Estilo terminal 8-bit / Puntuación / Diálogos) */
+/* 3. VT323 (Estilo terminal 8-bit / Badges / HUD) */
 @font-face {
-    font-family: 'VT323';
-    src: url('../fonts/VT323-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'VT323';
+  src: url('fonts/VT323-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* 4. Upheaval (Titulares Pixel Art Retro) */
+/* 4. Upheaval (Titulares Pixel Art Retro para H2 y H3) */
 @font-face {
-    font-family: 'Upheaval';
-    src: url('../fonts/upheavtt.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Upheaval';
+  src: url('fonts/upheavtt.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* RESET GLOBAL (Se corrigió el '-' por '*') */
+/* ==========================================
+   RESET & JERARQUÍA DE TIPOGRAFÍAS
+   ========================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -92,6 +68,26 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: 'Alata', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Asignación global de fuentes por jerarquía */
+h1, .hero-title, .logo {
+  font-family: 'Boogaloo', cursive, sans-serif;
+  letter-spacing: 1px;
+}
+
+h2, h3, .pixel-header {
+  font-family: 'Upheaval', sans-serif;
+  letter-spacing: 1px;
+}
+
+small, .badge, .retro-hud, .dialogo-box {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
 }
 
 /* NAVBAR MULTIPÁGINA */
@@ -110,14 +106,12 @@ body {
 }
 
 .logo {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--primary);
   text-decoration: none;
-  letter-spacing: 1px;
 }
 
-/* ESTILOS PARA EL LOGOTIPO EN LA NAVBAR */
 .logo-link {
   display: inline-flex;
   align-items: center;
@@ -125,7 +119,7 @@ body {
 }
 
 .logo-img {
-  height: 40px; /* Ajusta la altura según lo grande o pequeño que sea tu diseño */
+  height: 40px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -172,7 +166,7 @@ main {
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   background: linear-gradient(90deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -197,7 +191,7 @@ main {
   text-align: center;
   overflow: hidden;
   background: radial-gradient(circle at center, #131726 0%, #0b0d17 100%);
-  margin: -3rem -8.7% 2rem -8.7%; /* Ajuste para ocupar todo el ancho */
+  margin: -3rem -8.7% 2rem -8.7%;
 }
 
 #anomaly-canvas {
@@ -229,9 +223,6 @@ main {
   border: 1px solid var(--accent);
   color: #c77dff;
   border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
@@ -239,9 +230,9 @@ main {
 .hero-title {
   font-size: 3.8rem;
   font-weight: 900;
-  letter-spacing: 2px;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #00d2ff 0%, #9d4edd 100%);
+  background: linear-gradient(135deg, #00d2ff 0%, #ff2bd6 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
@@ -275,7 +266,13 @@ main {
   border-color: var(--primary);
 }
 
-/* BOTONES CON EFECTO GLOW (Fusionados y unificados) */
+.card h3 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* BOTONES */
 .hero-buttons {
   display: flex;
   gap: 1.5rem;
@@ -322,7 +319,7 @@ main {
   color: #c77dff;
 }
 
-/* FOOTER & SOCIAL/TECH ICONS */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 2.5rem 2rem;
@@ -377,7 +374,19 @@ footer {
   filter: grayscale(0%);
 }
 
-/* PÁGINAS LEGALES (PRIVACIDAD & AVISO LEGAL) */
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+  margin: 0 0.3rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* PÁGINAS LEGALES */
 .legal-container {
   max-width: 900px;
   margin: 0 auto;
@@ -403,7 +412,7 @@ footer {
 }
 
 .legal-content h2 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #c77dff;
   margin: 1.8rem 0 0.8rem 0;
 }
@@ -422,52 +431,4 @@ footer {
 .legal-content li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
-}
-
-footer a {
-  color: var(--primary);
-  text-decoration: none;
-  margin: 0 0.3rem;
-  transition: color 0.3s ease;
-}
-
-footer a:hover {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-/* Contenedor del cargador */
-.css-loader {
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-
-/* Barras con color violeta neón y sombra brillante */
-.css-loader div {
-  position: absolute;
-  width: 8px;
-  height: 22px;
-  background: #7c6fff;
-  border-radius: 4px;
-  top: 0;
-  left: 50%;
-  margin-left: -4px;
-  transform-origin: 50% 40px;
-  box-shadow: 0 0 10px rgba(124, 111, 255, 0.6);
-  animation: fade 0.8s linear infinite;
-}
-
-.css-loader div:nth-child(1) { transform: rotate(0deg); animation-delay: 0s; }
-.css-loader div:nth-child(2) { transform: rotate(45deg); animation-delay: 0.1s; }
-.css-loader div:nth-child(3) { transform: rotate(90deg); animation-delay: 0.2s; }
-.css-loader div:nth-child(4) { transform: rotate(135deg); animation-delay: 0.3s; }
-.css-loader div:nth-child(5) { transform: rotate(180deg); animation-delay: 0.4s; }
-.css-loader div:nth-child(6) { transform: rotate(225deg); animation-delay: 0.5s; }
-.css-loader div:nth-child(7) { transform: rotate(270deg); animation-delay: 0.6s; }
-.css-loader div:nth-child(8) { transform: rotate(315deg); animation-delay: 0.7s; }
-
-@keyframes fade {
-  0%, 39%, 100% { opacity: 0.15; }
-  40% { opacity: 1; filter: drop-shadow(0 0 8px #7c6fff); }
 }
