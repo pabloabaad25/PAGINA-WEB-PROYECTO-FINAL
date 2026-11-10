@@ -3,73 +3,280 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Descubre Entre Dos Mons, la aventura indie de puzles y plataformas 2D de PC Pixel Studio donde alterar la gravedad cambia cada nivel.">
-  <meta property="og:title" content="Entre Dos Mons | PC Pixel Studio">
-  <meta property="og:description" content="Una aventura indie de puzles y plataformas 2D donde alterar la gravedad es tu mejor herramienta.">
+  <title>Entre Dos Mons · Aventura de puzles y plataformas en pixel art | PC Pixel Studio</title>
+  <meta name="description" content="Entre Dos Mons: un explorador en el bosque, un robot en las cuevas y una sola tecla para cambiar entre los dos. Aventura 2D de puzles y plataformas en pixel art de PC Pixel Studio. Consíguelo en itch.io.">
+  <meta name="theme-color" content="#071827">
+  <meta property="og:title" content="Entre Dos Mons · Dos héroes. Dos mundos. Una sola tecla.">
+  <meta property="og:description" content="Aventura 2D de puzles y plataformas en pixel art. Lo que Nil hace en el bosque abre el camino a Volt en las cuevas. Consíguelo en itch.io.">
   <meta property="og:type" content="website">
-  <title>PC Pixel Studio | Entre Dos Mons</title>
+  <meta property="og:image" content="img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/press-start-2p.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/hero.jpg" as="image">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Entre Dos Mons",
+    "description": "Aventura 2D de puzles y plataformas en pixel art con dos protagonistas, Nil y Volt, cuyos mundos se afectan entre sí.",
+    "genre": ["Puzle", "Plataformas", "Aventura"],
+    "gamePlatform": "PC",
+    "inLanguage": ["es", "ca"],
+    "url": "https://pabloabaad25.itch.io/entre-dos-mundos",
+    "image": "img/poster.jpg",
+    "author": { "@type": "Organization", "name": "PC Pixel Studio" }
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <!-- HEADER -->
   <header>
     <nav class="navbar" aria-label="Navegación principal">
-      <a href="index.html" class="logo-link" aria-label="PC Pixel Studio, página de inicio">
-        <img src="estudio/LOGOTIP ESTUDIO.png" alt="Logotipo de PC Pixel Studio" class="logo-img">
+      <a href="index.html" class="logo-link" aria-label="PC Pixel Studio, inicio">
+        <img src="estudio/logo-estudio.png" alt="" class="logo-img" width="52" height="44">
+        <span class="logo-text">PC Pixel<span>Studio</span></span>
       </a>
-
-      <ul class="nav-links">
-        <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#juego">El juego</a></li>
+        <li><a href="index.html#personajes">Personajes</a></li>
+        <li><a href="index.html#galeria">Galería</a></li>
         <li><a href="devlog.html">Devlog</a></li>
-        <li><a href="studio.html">El Estudio</a></li>
+        <li><a href="studio.html">Estudio</a></li>
         <li><a href="contact.html">Contacto</a></li>
+        <li class="nav-cta"><a class="btn btn-primary btn-small" href="https://pabloabaad25.itch.io/entre-dos-mundos" target="_blank" rel="noopener noreferrer">Jugar ▶</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main id="contenido">
+
+    <!-- HERO -->
     <section class="hero-section" aria-labelledby="hero-title">
       <canvas id="anomaly-canvas" aria-hidden="true"></canvas>
       <div class="hero-content">
-        <span class="badge">Aventura indie de PC Pixel Studio</span>
-        <h1 id="hero-title" class="hero-title">Entre Dos Mons</h1>
-        <p class="hero-subtitle">Una aventura de puzles y plataformas 2D donde alterar la gravedad es tu mejor herramienta.</p>
+        <h1 id="hero-title" class="sr-only">Entre Dos Mons</h1>
+        <img class="hero-logo" src="img/logo-entre-dos-mons.png" alt="Entre Dos Mons" width="1100" height="471">
+        <p class="hero-tagline">Dos héroes. Dos mundos.<br><em>Una sola tecla.</em></p>
+        <p class="hero-subtitle">Un explorador en el bosque. Un robot perdido en las cuevas. Lo que hace uno abre el camino al otro. Cambia entre los dos al instante y devuelve la luz al valle.</p>
         <div class="hero-buttons">
-          <a href="devlog.html" class="btn btn-primary">Ver avances</a>
+          <a href="https://pabloabaad25.itch.io/entre-dos-mundos" class="btn btn-primary" target="_blank" rel="noopener noreferrer">▶ Consíguelo en itch.io</a>
+          <a href="#galeria" class="btn btn-secondary">Ver capturas</a>
+        </div>
+        <div class="hero-tags" aria-label="Datos del juego">
+          <span class="badge badge-gold">PC</span>
+          <span class="badge">Puzles + plataformas</span>
+          <span class="badge">Pixel art</span>
+          <span class="badge">Sin violencia</span>
+          <span class="badge">Hecho en Girona</span>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#juego" aria-label="Bajar a la historia">▼ Descubre más</a>
+    </section>
+
+    <!-- HISTORIA / GANCHO -->
+    <section class="section" id="juego" aria-labelledby="story-title">
+      <div class="section-inner story">
+        <div class="reveal">
+          <span class="eyebrow">La historia</span>
+          <h2 id="story-title">El valle se ha quedado a oscuras</h2>
+          <p>Una vieja estación de investigación escondida bajo la montaña ha dejado de funcionar y, desde entonces, el pueblo del valle vive sin luz.</p>
+          <p><strong>Nil</strong>, un joven explorador, sube a la montaña con el cuaderno de su padre para descubrir qué ha pasado. Muy cerca, bajo tierra, <strong>Volt</strong>, un pequeño robot de mantenimiento, despierta en la oscuridad con la batería casi vacía.</p>
+          <p>Avanzan por separado, pero no están solos: cada puzle se resuelve entre los dos, hasta que por fin se encuentran en el núcleo de la estación.</p>
+          <p class="quote">«Si el río no deja de entrar en la cueva, Volt no llegará al generador. Y sin el generador, Nil nunca subirá a la cima.»</p>
+        </div>
+        <img class="story-img reveal" src="img/nil-y-volt.jpg" alt="Nil leyendo el cuaderno de su padre en lo alto de un acantilado al atardecer, mientras Volt ilumina una cueva con su linterna" width="1024" height="572" loading="lazy">
+      </div>
+    </section>
+
+    <!-- DOS MUNDOS (interactivo) -->
+    <section class="section section-alt" id="mundos" aria-labelledby="worlds-title">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">La mecánica estrella</span>
+          <h2 id="worlds-title">Un mundo cambia al otro</h2>
+          <p>En el juego pulsas <strong>Q</strong> para pasar de Nil a Volt. Aquí también: pruébalo.</p>
+        </div>
+
+        <div class="worlds reveal" id="worlds">
+          <article class="world world-bosque is-active" data-world="nil" aria-labelledby="w-nil">
+            <span class="badge world-label">Exterior</span>
+            <h3 id="w-nil">El bosque de Nil</h3>
+            <p>Cuerdas, péndulos y plataformas sobre el río. Salta, balancéate y usa el entorno para abrir camino.</p>
+            <ul><li class="badge">Cuerdas</li><li class="badge">Péndulos</li><li class="badge">Agua</li></ul>
+          </article>
+          <article class="world world-cuevas" data-world="volt" aria-labelledby="w-volt">
+            <span class="badge world-label">Subsuelo</span>
+            <h3 id="w-volt">Las cuevas de Volt</h3>
+            <p>Oscuridad total. Tu linterna es tu vida y gasta batería. Las botas magnéticas te dejan caminar por el techo.</p>
+            <ul><li class="badge">Linterna</li><li class="badge">Batería</li><li class="badge">Gravedad invertida</li></ul>
+          </article>
+        </div>
+
+        <div class="world-switch">
+          <button class="btn btn-ember" id="world-toggle" type="button" aria-pressed="false">
+            <span class="key" aria-hidden="true">Q</span> Cambiar a Volt
+          </button>
+          <p aria-live="polite" id="world-status">Ahora controlas a <strong>Nil</strong></p>
+        </div>
+
+        <div class="links-grid">
+          <div class="link-card reveal"><span class="icon" aria-hidden="true">🪵</span><p><strong>Nil tira un tronco al río</strong> y el agua deja de inundar la cueva de Volt.</p></div>
+          <div class="link-card reveal"><span class="icon" aria-hidden="true">⚡</span><p><strong>Volt reactiva un generador</strong> y fuera se enciende el ascensor que Nil necesita.</p></div>
+          <div class="link-card reveal"><span class="icon" aria-hidden="true">🔦</span><p><strong>La luz es un recurso:</strong> encuentra cargadores antes de que la batería llegue a cero.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="grid" aria-label="Características principales del juego">
-      <article class="card">
-        <h3>🕹️ Inversión Gravitatoria</h3>
-        <p>Altera la polaridad de los niveles en tiempo real con Unity 6 y C#.</p>
-      </article>
-      <article class="card">
-        <h3>🎨 Arte Pixelado</h3>
-        <p>Escenarios atmosféricos y sprites animados cuadro a cuadro.</p>
-      </article>
-      <article class="card">
-        <h3>🤖 Nil & Volt</h3>
-        <p>Explora un universo dividido por anomalías dimensionales.</p>
-      </article>
+    <!-- PERSONAJES -->
+    <section class="section" id="personajes" aria-labelledby="chars-title">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Los protagonistas</span>
+          <h2 id="chars-title">Conoce a Nil y Volt</h2>
+          <p>Dos formas de moverse, dos maneras de pensar cada puzle.</p>
+        </div>
+        <div class="characters">
+          <article class="character character-nil reveal">
+            <img class="character-sprite" src="img/nil.png" alt="Sprite de Nil, explorador con bufanda naranja" width="183" height="259" loading="lazy">
+            <div>
+              <h3>Nil</h3>
+              <span class="role">Explorador de montaña</span>
+              <p>Curioso, valiente y un poco cabezota. Sigue las notas del cuaderno de su padre para descubrir qué apagó el valle.</p>
+              <ul class="abilities">
+                <li>Se agarra a cuerdas y se balancea en péndulos</li>
+                <li>Mueve cajas y troncos para cambiar el terreno</li>
+                <li>Nada, corre y salta por el bosque</li>
+              </ul>
+            </div>
+          </article>
+          <article class="character character-volt reveal">
+            <img class="character-sprite" src="img/volt.png" alt="Sprite de Volt, pequeño robot de mantenimiento" width="137" height="234" loading="lazy">
+            <div>
+              <h3>Volt</h3>
+              <span class="role">Robot de mantenimiento</span>
+              <p>Pequeño, metódico y con la batería en las últimas. Conoce la estación mejor que nadie, aunque no recuerda por qué se apagó.</p>
+              <ul class="abilities">
+                <li>Invierte la gravedad con sus botas magnéticas</li>
+                <li>Ilumina las cuevas con su linterna</li>
+                <li>Activa palancas, generadores y maquinaria</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
+
+    <!-- CARACTERÍSTICAS -->
+    <section class="section section-alt" aria-labelledby="features-title">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Por qué te va a gustar</span>
+          <h2 id="features-title">Lo que hace especial a Entre Dos Mons</h2>
+        </div>
+        <div class="grid">
+          <article class="card reveal"><span class="card-icon" aria-hidden="true">🔀</span><h3>Cambio instantáneo</h3><p>Una tecla y pasas de un personaje a otro, sin cargas ni esperas.</p></article>
+          <article class="card reveal"><span class="card-icon" aria-hidden="true">🧲</span><h3>Gravedad invertida</h3><p>Camina por el techo con Volt y mira cada sala desde otro ángulo.</p></article>
+          <article class="card reveal"><span class="card-icon" aria-hidden="true">🪢</span><h3>Física para jugar</h3><p>Cuerdas, péndulos, agua y cajas que reaccionan como esperas.</p></article>
+          <article class="card reveal"><span class="card-icon" aria-hidden="true">🔦</span><h3>La luz importa</h3><p>Gestiona la batería de la linterna: sin luz, las cuevas no perdonan.</p></article>
+          <article class="card reveal"><span class="card-icon" aria-hidden="true">🎨</span><h3>Pixel art a mano</h3><p>Bosques al atardecer y cuevas industriales dibujados píxel a píxel.</p></article>
+          <article class="card reveal"><span class="card-icon" aria-hidden="true">🕊️</span><h3>Reto sin violencia</h3><p>Difícil pero justo. Aquí el rival es el entorno, no los enemigos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section class="section" id="galeria" aria-labelledby="gallery-title">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <span class="eyebrow">Capturas</span>
+          <h2 id="gallery-title">Echa un vistazo</h2>
+          <p>Imágenes del juego en desarrollo con Unity 6. Pulsa cualquiera para verla en grande.</p>
+        </div>
+        <div class="gallery reveal">
+          <figure><button type="button" data-full="img/galeria/dos-mundos.jpg"><img src="img/galeria/dos-mundos.jpg" alt="Pantalla dividida: el bosque de Nil arriba y las cuevas de Volt abajo" loading="lazy"></button><figcaption>Arriba el bosque, abajo las cuevas</figcaption></figure>
+          <figure><button type="button" data-full="img/galeria/bosque-pendulo.jpg"><img src="img/galeria/bosque-pendulo.jpg" alt="Nil junto a un péndulo en el bosque" loading="lazy"></button><figcaption>Nil y los péndulos</figcaption></figure>
+          <figure><button type="button" data-full="img/galeria/cuevas-linterna.jpg"><img src="img/galeria/cuevas-linterna.jpg" alt="Volt iluminando una cueva con su linterna" loading="lazy"></button><figcaption>Volt y su linterna</figcaption></figure>
+          <figure><button type="button" data-full="img/galeria/estacion-hud.jpg"><img src="img/galeria/estacion-hud.jpg" alt="Nil en la estación abandonada con el HUD de cristales, piezas y baterías" loading="lazy"></button><figcaption>La estación abandonada</figcaption></figure>
+          <figure><button type="button" data-full="img/galeria/prologo.png"><img src="img/galeria/prologo.png" alt="Vista completa del nivel del prólogo" loading="lazy"></button><figcaption>Mapa del prólogo</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SI TE GUSTAN -->
+    <section class="section section-alt" aria-labelledby="inspo-title">
+      <div class="section-inner section-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Para fans de</span>
+        <h2 id="inspo-title">Si te gustaron estos, te gustará este</h2>
+        <div class="inspo">
+          <span>Celeste</span><span>Brothers: A Tale of Two Sons</span><span>Limbo</span><span>Hollow Knight</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section" id="jugar" aria-labelledby="cta-title">
+      <div class="section-inner cta reveal">
+        <img class="cta-poster" src="img/poster.jpg" alt="Póster de Entre Dos Mons con Nil y Volt" width="900" height="1350" loading="lazy">
+        <div>
+          <span class="eyebrow">Tu aventura empieza aquí</span>
+          <h2 id="cta-title">¿Listo para cruzar entre dos mundos?</h2>
+          <p>Descarga Entre Dos Mons en itch.io, deja tu comentario y síguenos en Instagram para ver cada nuevo nivel, personaje y secreto antes que nadie.</p>
+          <div class="cta-buttons">
+            <a href="https://pabloabaad25.itch.io/entre-dos-mundos" class="btn btn-primary" target="_blank" rel="noopener noreferrer">▶ Jugar en itch.io</a>
+            <a href="https://www.instagram.com/pcpixelstudio_oficial/" class="btn btn-ember" target="_blank" rel="noopener noreferrer"><img src="iconos/icon-instagram.png" alt="" width="20" height="20"> Seguir en Instagram</a>
+          </div>
+          <span class="cta-note">Juego en desarrollo activo. Tu feedback nos ayuda a mejorarlo.</span>
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="footer-content">
-      <p>&copy; 2026-27 PC Pixel Studio. Todos los derechos reservados. — Girona, España | <a href="privacy.html">Privacidad</a> | <a href="legal.html">Aviso Legal</a></p>
-
-      <nav class="footer-icons" aria-label="Redes sociales y herramientas">
-        <a href="https://itch.io" target="_blank" rel="noopener noreferrer" title="Itch.io" aria-label="Visitar PC Pixel Studio en Itch.io"><img src="iconos/icon-aviable-itchio.svg" alt="Itch.io"></a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="Visitar PC Pixel Studio en GitHub"><img src="iconos/icon-github.png" alt="GitHub"></a>
-        <a href="https://instagram.com/pcpixelstudio_oficial" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Visitar PC Pixel Studio en Instagram"><img src="iconos/icon-instagram.png" alt="Instagram"></a>
-        <a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer" title="Steam" aria-label="Visitar Steam"><img src="iconos/icon-steam.png" alt="Steam"></a>
-        <a href="https://unity.com" target="_blank" rel="noopener noreferrer" title="Unity 6" aria-label="Visitar Unity 6"><img src="iconos/icon-unity.png" alt="Unity 6"></a>
-        <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer" title="VS Code" aria-label="Visitar Visual Studio Code"><img src="iconos/icon-vscode.png" alt="Visual Studio Code"></a>
-        <a href="https://visualstudio.microsoft.com" target="_blank" rel="noopener noreferrer" title="Visual Studio" aria-label="Visitar Visual Studio"><img src="iconos/icon-vstudio.png" alt="Visual Studio"></a>
-      </nav>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="estudio/logo-estudio.png" alt="PC Pixel Studio" width="66" height="56">
+          <p>Estudio indie de Girona. Hacemos juegos en pixel art con mucho cariño y algo de café.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <nav class="footer-icons" aria-label="Redes sociales">
+            <a href="https://pabloabaad25.itch.io/entre-dos-mundos" target="_blank" rel="noopener noreferrer" aria-label="Entre Dos Mons en itch.io"><img src="iconos/icon-aviable-itchio.svg" alt=""></a>
+            <a href="https://www.instagram.com/pcpixelstudio_oficial/" target="_blank" rel="noopener noreferrer" aria-label="PC Pixel Studio en Instagram"><img src="iconos/icon-instagram.png" alt=""></a>
+            <a href="https://github.com/CyrailJR11/Projecte-Intermodular-de-Desenvolupament-d-Aplicacions-Multiplataforma" target="_blank" rel="noopener noreferrer" aria-label="Código del juego en GitHub"><img src="iconos/icon-github.png" alt=""></a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Hecho con</h4>
+          <div class="footer-icons">
+            <a href="https://unity.com" target="_blank" rel="noopener noreferrer" aria-label="Unity 6"><img src="iconos/icon-unity.png" alt=""></a>
+            <a href="https://visualstudio.microsoft.com" target="_blank" rel="noopener noreferrer" aria-label="Visual Studio"><img src="iconos/icon-vstudio.png" alt=""></a>
+            <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer" aria-label="Visual Studio Code"><img src="iconos/icon-vscode.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026-27 PC Pixel Studio · Girona, España</p>
+        <p><a href="privacy.html">Privacidad</a> · <a href="legal.html">Aviso legal</a> · <a href="contact.html">Contacto</a></p>
+      </div>
     </div>
   </footer>
+
+  <!-- VISOR DE CAPTURAS -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Captura ampliada">
+    <button class="lightbox-close" type="button" aria-label="Cerrar">✕</button>
+    <img src="" alt="">
+    <p></p>
+  </div>
 
   <script src="script.js"></script>
 </body>

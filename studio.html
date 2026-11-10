@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EL ESTUDIO | PC Pixel Studio</title>
+  <meta name="theme-color" content="#071827">
+  <link rel="icon" href="favicons/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="favicons/apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -145,20 +149,29 @@
 </head>
 <body>
 
-  <!-- BARRA DE NAVEGACIÓN -->
-  <nav class="navbar">
-    <a href="index.html" class="logo-link">
-      <img src="LOGOTIP ESTUDIO.png" alt="PC Pixel Studio Logo" class="logo-img">
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="devlog.html">Devlog</a></li>
-      <li><a href="studio.html" class="active">El Estudio</a></li>
-      <li><a href="contact.html">Contacto</a></li>
-    </ul>
-  </nav>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-  <main>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar" aria-label="Navegación principal">
+      <a href="index.html" class="logo-link" aria-label="PC Pixel Studio, inicio">
+        <img src="estudio/logo-estudio.png" alt="" class="logo-img" width="52" height="44">
+        <span class="logo-text">PC Pixel<span>Studio</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#juego">El juego</a></li>
+        <li><a href="index.html#personajes">Personajes</a></li>
+        <li><a href="index.html#galeria">Galería</a></li>
+        <li><a href="devlog.html">Devlog</a></li>
+        <li><a href="studio.html">Estudio</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+        <li class="nav-cta"><a class="btn btn-primary btn-small" href="https://pabloabaad25.itch.io/entre-dos-mundos" target="_blank" rel="noopener noreferrer">Jugar ▶</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido" class="page">
     <!-- EL ESTUDIO -->
     <section class="studio-hero">
       <h2>El Estudio</h2>
@@ -212,7 +225,7 @@
       </div>
 
       <p style="text-align: center; font-weight: 600; color: var(--primary); margin: 2rem 0;">
-        ¡Pasa a conocernos un poco más y descubre dónde cobra vida Entre Dos Mundos!
+        ¡Pasa a conocernos un poco más y descubre dónde cobra vida Entre Dos Mons!
       </p>
     </section>
 
@@ -223,19 +236,19 @@
         <button class="carousel-btn carousel-prev" onclick="moveSlide(-1)">&#10094;</button>
         <div class="carousel-slides" id="carouselSlides">
           <div class="carousel-slide">
-            <img src="estudio/imagenes-estudio/studio_core-dev-hub_interior.png" alt="Core Dev Hub Interior">
+            <img src="estudio/imagenes-estudio/studio_core-dev-hub_interior.jpg" alt="Core Dev Hub Interior">
           </div>
           <div class="carousel-slide">
-            <img src="estudio/imagenes-estudio/studio_exterior-escaparate.png" alt="Exterior Escaparate">
+            <img src="estudio/imagenes-estudio/studio_exterior-escaparate.jpg" alt="Exterior Escaparate">
           </div>
           <div class="carousel-slide">
-            <img src="estudio/imagenes-estudio/studio_media-sound-room_interior.png" alt="Media Sound Room Interior">
+            <img src="estudio/imagenes-estudio/studio_media-sound-room_interior.jpg" alt="Media Sound Room Interior">
           </div>
           <div class="carousel-slide">
-            <img src="estudio/imagenes-estudio/studio_meeting-room_interior.png" alt="Meeting Room Interior">
+            <img src="estudio/imagenes-estudio/studio_meeting-room_interior.jpg" alt="Meeting Room Interior">
           </div>
           <div class="carousel-slide">
-            <img src="estudio/imagenes-estudio/studio_qa-playtesting-hub_interior.png" alt="QA Playtesting Hub Interior">
+            <img src="estudio/imagenes-estudio/studio_qa-playtesting-hub_interior.jpg" alt="QA Playtesting Hub Interior">
           </div>
         </div>
         <button class="carousel-btn carousel-next" onclick="moveSlide(1)">&#10095;</button>
@@ -253,7 +266,7 @@
             <span>Pasión y Vocación Indie</span>
           </div>
           <div class="accordion-content">
-            <p>El amor por el desarrollo de videojuegos tradicionales y el pixel art hecho con dedicación, reflejado en cada detalle gráfico y mecánico de Entre Dos Mundos.</p>
+            <p>El amor por el desarrollo de videojuegos tradicionales y el pixel art hecho con dedicación, reflejado en cada detalle gráfico y mecánico de Entre Dos Mons.</p>
           </div>
         </div>
 
@@ -303,7 +316,7 @@
           </p>
           <p style="color: var(--text-muted); line-height: 1.7;">
             Contar con nuestra propia infraestructura —desde servidores locales y red optimizada hasta el control total de cada línea de código— nos permite gestionar
-            flujos de trabajo avanzados, blindar el rendimiento de proyectos como Entre Dos Mundos y perseguir una idea creativa hasta sus últimas consecuencias para construir
+            flujos de trabajo avanzados, blindar el rendimiento de proyectos como Entre Dos Mons y perseguir una idea creativa hasta sus últimas consecuencias para construir
             mundos exactamente como imaginamos que deben sentirse.
           </p>
         </div>
@@ -318,15 +331,31 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-content">
-      <p>&copy; 2026-27 PC Pixel Studio. Todos los derechos reservados. — Girona, España | <a href="privacy.html">Privacidad</a> | <a href="legal.html">Aviso Legal</a></p>
-      <div class="footer-icons">
-        <a href="https://itch.io" target="_blank" title="Itch.io"><img src="iconos/icon-aviable-itchio.svg" alt="Itch.io"></a>
-        <a href="https://github.com" target="_blank" title="GitHub"><img src="iconos/icon-github.png" alt="GitHub"></a>
-        <a href="https://instagram.com/pcpixelstudio_oficial" target="_blank" title="Instagram"><img src="iconos/icon-instagram.png" alt="Instagram"></a>
-        <a href="https://store.steampowered.com" target="_blank" title="Steam"><img src="iconos/icon-steam.png" alt="Steam"></a>
-        <a href="https://unity.com" target="_blank" title="Unity 6"><img src="iconos/icon-unity.png" alt="Unity"></a>
-        <a href="https://code.visualstudio.com" target="_blank" title="VS Code"><img src="iconos/icon-vscode.png" alt="VS Code"></a>
-        <a href="https://visualstudio.microsoft.com" target="_blank" title="Visual Studio"><img src="iconos/icon-vstudio.png" alt="Visual Studio"></a>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="estudio/logo-estudio.png" alt="PC Pixel Studio" width="66" height="56">
+          <p>Estudio indie de Girona. Hacemos juegos en pixel art con mucho cariño y algo de café.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Síguenos</h4>
+          <nav class="footer-icons" aria-label="Redes sociales">
+            <a href="https://pabloabaad25.itch.io/entre-dos-mundos" target="_blank" rel="noopener noreferrer" aria-label="Entre Dos Mons en itch.io"><img src="iconos/icon-aviable-itchio.svg" alt=""></a>
+            <a href="https://www.instagram.com/pcpixelstudio_oficial/" target="_blank" rel="noopener noreferrer" aria-label="PC Pixel Studio en Instagram"><img src="iconos/icon-instagram.png" alt=""></a>
+            <a href="https://github.com/CyrailJR11/Projecte-Intermodular-de-Desenvolupament-d-Aplicacions-Multiplataforma" target="_blank" rel="noopener noreferrer" aria-label="Código del juego en GitHub"><img src="iconos/icon-github.png" alt=""></a>
+          </nav>
+        </div>
+        <div class="footer-col">
+          <h4>Hecho con</h4>
+          <div class="footer-icons">
+            <a href="https://unity.com" target="_blank" rel="noopener noreferrer" aria-label="Unity 6"><img src="iconos/icon-unity.png" alt=""></a>
+            <a href="https://visualstudio.microsoft.com" target="_blank" rel="noopener noreferrer" aria-label="Visual Studio"><img src="iconos/icon-vstudio.png" alt=""></a>
+            <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer" aria-label="Visual Studio Code"><img src="iconos/icon-vscode.png" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026-27 PC Pixel Studio · Girona, España</p>
+        <p><a href="privacy.html">Privacidad</a> · <a href="legal.html">Aviso legal</a> · <a href="contact.html">Contacto</a></p>
       </div>
     </div>
   </footer>
@@ -363,5 +392,6 @@
       }
     }
   </script>
+  <script src="script.js"></script>
 </body>
-</html>
+</html>
