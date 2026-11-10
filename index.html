@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre Entre Dos Mons, la aventura indie de puzles y plataformas 2D de PC Pixel Studio donde alterar la gravedad cambia cada nivel.">
+  <meta property="og:title" content="Entre Dos Mons | PC Pixel Studio">
+  <meta property="og:description" content="Una aventura indie de puzles y plataformas 2D donde alterar la gravedad es tu mejor herramienta.">
+  <meta property="og:type" content="website">
+  <title>PC Pixel Studio | Entre Dos Mons</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar" aria-label="Navegación principal">
+      <a href="index.html" class="logo-link" aria-label="PC Pixel Studio, página de inicio">
+        <img src="estudio/LOGOTIP ESTUDIO.png" alt="Logotipo de PC Pixel Studio" class="logo-img">
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
+        <li><a href="devlog.html">Devlog</a></li>
+        <li><a href="studio.html">El Estudio</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section" aria-labelledby="hero-title">
+      <canvas id="anomaly-canvas" aria-hidden="true"></canvas>
+      <div class="hero-content">
+        <span class="badge">Aventura indie de PC Pixel Studio</span>
+        <h1 id="hero-title" class="hero-title">Entre Dos Mons</h1>
+        <p class="hero-subtitle">Una aventura de puzles y plataformas 2D donde alterar la gravedad es tu mejor herramienta.</p>
+        <div class="hero-buttons">
+          <a href="devlog.html" class="btn btn-primary">Ver avances</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Características principales del juego">
+      <article class="card">
+        <h3>🕹️ Inversión Gravitatoria</h3>
+        <p>Altera la polaridad de los niveles en tiempo real con Unity 6 y C#.</p>
+      </article>
+      <article class="card">
+        <h3>🎨 Arte Pixelado</h3>
+        <p>Escenarios atmosféricos y sprites animados cuadro a cuadro.</p>
+      </article>
+      <article class="card">
+        <h3>🤖 Nil & Volt</h3>
+        <p>Explora un universo dividido por anomalías dimensionales.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026-27 PC Pixel Studio. Todos los derechos reservados. — Girona, España | <a href="privacy.html">Privacidad</a> | <a href="legal.html">Aviso Legal</a></p>
+
+      <nav class="footer-icons" aria-label="Redes sociales y herramientas">
+        <a href="https://itch.io" target="_blank" rel="noopener noreferrer" title="Itch.io" aria-label="Visitar PC Pixel Studio en Itch.io"><img src="iconos/icon-aviable-itchio.svg" alt="Itch.io"></a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="Visitar PC Pixel Studio en GitHub"><img src="iconos/icon-github.png" alt="GitHub"></a>
+        <a href="https://instagram.com/pcpixelstudio_oficial" target="_blank" rel="noopener noreferrer" title="Instagram" aria-label="Visitar PC Pixel Studio en Instagram"><img src="iconos/icon-instagram.png" alt="Instagram"></a>
+        <a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer" title="Steam" aria-label="Visitar Steam"><img src="iconos/icon-steam.png" alt="Steam"></a>
+        <a href="https://unity.com" target="_blank" rel="noopener noreferrer" title="Unity 6" aria-label="Visitar Unity 6"><img src="iconos/icon-unity.png" alt="Unity 6"></a>
+        <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer" title="VS Code" aria-label="Visitar Visual Studio Code"><img src="iconos/icon-vscode.png" alt="Visual Studio Code"></a>
+        <a href="https://visualstudio.microsoft.com" target="_blank" rel="noopener noreferrer" title="Visual Studio" aria-label="Visitar Visual Studio"><img src="iconos/icon-vstudio.png" alt="Visual Studio"></a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

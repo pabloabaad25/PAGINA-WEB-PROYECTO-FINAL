@@ -1,0 +1,434 @@
+/* ==========================================
+   PC PIXEL STUDIO — ESTILOS GLOBALES WEB
+   ========================================== */
+
+:root {
+  --bg-color: #0b0d17;
+  --card-bg: #161b26;
+  --primary: #00d2ff;
+  --accent: #9d4edd;
+  --text-main: #f0f3f8;
+  --text-muted: #94a3b8;
+  --border: #2a324b;
+}
+
+/* ==========================================
+   CARGA DE FUENTES LOCALES (@font-face)
+   ========================================== */
+
+/* 1. Alata (Cuerpo de texto y lectura general) */
+@font-face {
+  font-family: 'Alata';
+  src: url('fonts/Alata-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Boogaloo (Titulares principales / Hero / Logotipos) */
+@font-face {
+  font-family: 'Boogaloo';
+  src: url('fonts/Boogaloo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. VT323 (Estilo terminal 8-bit / Badges / HUD) */
+@font-face {
+  font-family: 'VT323';
+  src: url('fonts/VT323-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 4. Upheaval (Titulares Pixel Art Retro para H2 y H3) */
+@font-face {
+  font-family: 'Upheaval';
+  src: url('fonts/upheavtt.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   RESET & JERARQUÍA DE TIPOGRAFÍAS
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Alata', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Asignación global de fuentes por jerarquía */
+h1, .hero-title, .logo {
+  font-family: 'Boogaloo', cursive, sans-serif;
+  letter-spacing: 1px;
+}
+
+h2, h3, .pixel-header {
+  font-family: 'Upheaval', sans-serif;
+  letter-spacing: 1px;
+}
+
+small, .badge, .retro-hud, .dialogo-box {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+
+/* NAVBAR MULTIPÁGINA */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 8%;
+  background: rgba(11, 13, 23, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+/* MAIN CONTENT */
+main {
+  flex: 1;
+  padding: 3rem 8%;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+/* HERO SECTION & ANOMALÍA DIMENSIONAL */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #131726 0%, #0b0d17 100%);
+  margin: -3rem -8.7% 2rem -8.7%;
+}
+
+#anomaly-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2.5rem;
+  background: rgba(22, 27, 38, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 210, 255, 0.1);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(157, 78, 221, 0.2);
+  border: 1px solid var(--accent);
+  color: #c77dff;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #00d2ff 0%, #ff2bd6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(0, 210, 255, 0.3);
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* CARDS & GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+/* BOTONES */
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #00d2ff, #0077ff);
+  color: #0b0d17;
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px rgba(0, 210, 255, 0.7);
+  opacity: 0.95;
+}
+
+.btn-secondary {
+  background: rgba(22, 27, 38, 0.8);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 0 25px rgba(157, 78, 221, 0.4);
+  color: #c77dff;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  border-top: 1px solid var(--border);
+  background: rgba(11, 13, 23, 0.95);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.footer-icons a {
+  display: inline-flex;
+  padding: 0.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.footer-icons img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: filter 0.3s ease;
+}
+
+.footer-icons a:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+}
+
+.footer-icons a:hover img {
+  filter: grayscale(0%);
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+  margin: 0 0.3rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* PÁGINAS LEGALES */
+.legal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.legal-container h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.last-update {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.legal-content h2 {
+  font-size: 1.6rem;
+  color: #c77dff;
+  margin: 1.8rem 0 0.8rem 0;
+}
+
+.legal-content p {
+  color: var(--text-main);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.legal-content ul {
+  margin: 0.8rem 0 1.2rem 1.5rem;
+  color: var(--text-muted);
+}
+
+.legal-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
